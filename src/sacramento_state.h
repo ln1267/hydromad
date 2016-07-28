@@ -15,7 +15,7 @@ struct SMA { /* I/O passed in function FLAND1 (THE SMA
   double pxmlt,pemlt,mpemlt[12];                        /* Parameters */
   double etmin,etshp,etrng;                    /* et curve parameters */
   double uztwc,uzfwc,lztwc,lzfsc,lzfpc,adimc;               /* States */
-  double dt,pxv,ep,epdist,tlci;                   /* Other Parameters */
+  double dt,pxv,ep,epdist,tlci,aet;                   /* Other Parameters */
   double tlci_flows[7];
   int min_ninc; //Minimum number of inner iterations in FLAND1
 };
@@ -30,7 +30,7 @@ struct FSUM1 { /* I/O passed in function FLAND1 (THE SMA
 /* FUNCTION DECLARATION */
 void sma_sac_state(double *P, double *E, int *n,
 		   double *xpar, double *etmult,
-		   double *dt, double *U,
+		   double *dt, double *U,double *AET,
 		   double *uztwc, double *uzfwc,
 		   double *lztwc, double *lzfsc,
 		   double *lzfpc,double *adimc,
