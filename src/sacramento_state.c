@@ -8,7 +8,7 @@
 
 void sma_sac_state(double *P, double *E, int *n,
 	     double *xpar, double *etmult,
-		   double *dt, double *U,
+		   double *dt, double *U,double *AET,
 		   double *uztwc, double *uzfwc,
 		   double *lztwc, double *lzfsc,
 		   double *lzfpc,double *adimc,
@@ -81,7 +81,6 @@ void sma_sac_state(double *P, double *E, int *n,
 	/* SET TOTAL CHANNEL INFLOW EQUAL TO THE EXCESS AT THE END  */
 	/* OF EACH TIME PERIOD */
 	U[t] = sma.tlci;
-
 	/* SAVE STATE VARIABLES */
 	uztwc[t]=sma.uztwc;
 	uzfwc[t]=sma.uzfwc;
@@ -89,7 +88,10 @@ void sma_sac_state(double *P, double *E, int *n,
 	lzfsc[t]=sma.lzfsc;
 	lzfpc[t]=sma.lzfpc;
 	adimc[t]=sma.adimc;
-
+	
+	/* SET TOTAL CHANNEL EVAPOTRANSPIRATION EQUAL TO THE EXCESS AT THE END  */
+	/* OF EACH TIME PERIOD */
+	AET[t] = sma.aet;
 	/* SAVE EVAPORATION TOTALS */
 	sett[t]=fsum1.sett;
 	se1[t]=fsum1.se1;

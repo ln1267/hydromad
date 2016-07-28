@@ -7,7 +7,7 @@
 
 void sma_sac(double *P, double *E, int *n,
 	     double *xpar, double *etmult, 
-	     double *dt, double *U,
+	     double *dt, double *U,double *AET,
 	     double *uztwc_0,double *uzfwc_0,
 	     double *lztwc_0,double *lzfsc_0, double *lzfpc_0,
 	     double *adimc_0, int *min_ninc
@@ -71,5 +71,6 @@ void sma_sac(double *P, double *E, int *n,
 	/* SET TOTAL CHANNEL INFLOW EQUAL TO THE EXCESS AT THE END  */
 	/* OF EACH TIME PERIOD */
 	U[t] = sma.tlci;
+	AET[t] = sma.aet;
     }
 }

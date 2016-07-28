@@ -380,7 +380,10 @@ void fland1(struct SMA *sma,struct FSUM1 *fsum1)
       fsum1->se3 += (e3 * parea);
       fsum1->se4 += e4;
       fsum1->se5 += e5;
-
+	  
+/*    COMPUTE ACTUAL EVAPOTRANSPIRATION-AET FOR THE TIME INTERVAL.  */
+      sma->aet = tet;	  
+	  
 /*   CHECK THAT ADIMC >= UZTWC */
      if (sma->adimc < sma->uztwc) sma->adimc = sma->uztwc;
 
