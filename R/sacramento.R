@@ -93,7 +93,7 @@ sacramento.sim <-
                 as.double(lztwc_0),as.double(lzfsc_0),as.double(lzfpc_0),
                 as.double(adimc_0),
                 as.integer(min_ninc),
-                NAOK = FALSE, DUP = FALSE, PACKAGE="hydromad")$U
+                NAOK = FALSE, DUP = FALSE, PACKAGE="hydromad")
         ## make it a time series object again
         for(i in 7:8) attributes(states[[i]]) <- attributes(P)
         ans <- do.call(cbind,states[7:8])
