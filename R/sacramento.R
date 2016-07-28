@@ -95,13 +95,11 @@ sacramento.sim <-
                 as.integer(min_ninc),
                 NAOK = FALSE, DUP = FALSE, PACKAGE="hydromad")$U
         ## make it a time series object again
-        for(i in 7:8) {
-		attributes(states[[i]]) <- attributes(P)
-		## re-insert missing values
-		states[[i]][bad] <- NA
-		}
+        for(i in 7:8) attributes(states[[i]]) <- attributes(P)
         ans <- do.call(cbind,states[7:8])
-        return(ans)
+		## re-insert missing values
+		ans[bad,] <- NA 
+       return(ans)
     }
 }
 
